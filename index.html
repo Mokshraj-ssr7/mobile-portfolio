@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <div class="loader-container">
@@ -17,50 +16,20 @@
         </div>
     </div>
 
-    <!-- Moving purple gradient lights -->
-    <div class="gradient-lights">
-        <!-- Background ambient lights - positioned for optimal gradient coverage -->
-        <div class="gradient-light light-top-left"></div>
-        <div class="gradient-light light-top-right"></div>
-        <div class="gradient-light light-center"></div>
-        <div class="gradient-light light-bottom-left"></div>
-        <div class="gradient-light light-bottom-right"></div>
-        <div class="gradient-light light-middle-left"></div>
-        <div class="gradient-light light-middle-right"></div>
-        
-        <!-- Left side clusters (red marked region) -->
-        <div class="light-cluster left-cluster">
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light small"></div>
-            <div class="cluster-light small"></div>
-            <div class="cluster-light small"></div>
-        </div>
-        
-        <!-- Right side clusters (red marked region) -->
-        <div class="light-cluster right-cluster">
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light small"></div>
-            <div class="cluster-light small"></div>
-            <div class="cluster-light small"></div>
-        </div>
-        
-        <!-- Center clusters (for contact section) -->
-        <div class="light-cluster center-cluster">
-            <div class="cluster-light"></div>
-            <div class="cluster-light"></div>
-            <div class="cluster-light small"></div>
-            <div class="cluster-light small"></div>
-            <div class="cluster-light small"></div>
-        </div>
+    <!-- Vector graphics background elements -->
+    <div class="vector-background">
+        <div class="vector-element wave-bg"></div>
+        <div class="vector-element grid-pattern"></div>
+        <div class="vector-element dots-pattern"></div>
+        <img src="assets/hexagon-pattern.svg" alt="Hexagon Pattern" class="hexagon-pattern">
     </div>
-
-    <div id="canvas-container"></div>
+    
+    <!-- Simple background gradient effect -->
+    <div class="simple-background-effect">
+        <div class="simple-gradient simple-gradient-1"></div>
+        <div class="simple-gradient simple-gradient-2"></div>
+        <div class="simple-gradient simple-gradient-3"></div>
+    </div>
 
     <header>
         <div class="logo">NAMASTE 🙏</div>
@@ -87,6 +56,12 @@
                 <h2 class="highlight">DEVELOPER</h2>
             </div>
         </div>
+        <div class="home-vector-graphics">
+            <img src="assets/code-brackets.svg" alt="Code Brackets" class="floating-svg code-brackets">
+            <img src="assets/blob-shape.svg" alt="Abstract Shape" class="floating-svg blob-shape">
+            <img src="assets/creative-coder.svg" alt="Creative Coder" class="floating-svg creative-coder">
+            <img src="assets/programming-languages.svg" alt="Programming Languages" class="floating-svg programming-languages">
+        </div>
         <div class="social-sidebar">
             <a href="https://github.com/mokshraj" class="social-icon"><i class="fab fa-github"></i></a>
             <a href="https://linkedin.com/in/mokshraj" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -111,6 +86,10 @@
                 </div>
             </div>
         </div>
+        <div class="section-vector-graphics">
+            <img src="assets/tech-circuit.svg" alt="Tech Circuit" class="floating-svg tech-circuit">
+            <img src="assets/tech-network.svg" alt="Technology Network" class="floating-svg tech-network">
+        </div>
     </section>
 
     <section id="techstack" class="section">
@@ -132,6 +111,10 @@
 
     <section id="work" class="section">
         <h2 class="section-title">WHAT I DO</h2>
+        <div class="section-vector-graphics">
+            <img src="assets/responsive-design.svg" alt="Responsive Design" class="floating-svg responsive-design">
+            <img src="assets/dev-workflow.svg" alt="Development Workflow" class="floating-svg dev-workflow">
+        </div>
         <div class="work-categories">
             <div class="glass-card service-card">
                 <div class="card-content">
@@ -256,6 +239,9 @@
                 </button>
             </div>
         </div>
+        <div class="section-vector-graphics">
+            <img src="assets/tech-icons.svg" alt="Tech Icons" class="floating-svg tech-icons">
+        </div>
     </section>
 
     <section id="education" class="section">
@@ -340,6 +326,9 @@
 
     <section id="contact" class="section">
         <h2 class="section-title">CONTACT</h2>
+        <div class="section-vector-graphics">
+            <img src="assets/contact-illustration.svg" alt="Contact Illustration" class="floating-svg contact-illustration">
+        </div>
         <div class="contact-container">
             <div class="glass-card contact-card">
                 <div class="card-content">
