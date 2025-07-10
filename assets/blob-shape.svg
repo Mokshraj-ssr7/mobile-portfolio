@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Abstract Shape</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="shapeGradient">
+            <stop stop-color="#9F7AEA" offset="0%"></stop>
+            <stop stop-color="#6B46C1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" fill="url(#shapeGradient)">
+        <path d="M200,20 
+                C260,20 310,70 310,130 
+                C310,190 280,230 320,280 
+                C360,330 300,380 200,380 
+                C100,380 40,330 80,280 
+                C120,230 90,190 90,130 
+                C90,70 140,20 200,20 Z" opacity="0.7">
+        </path>
+    </g>
+</svg>

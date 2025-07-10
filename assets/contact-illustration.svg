@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="300px" viewBox="0 0 400 300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Contact Illustration</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="contactGradient">
+            <stop stop-color="#9F7AEA" offset="0%"></stop>
+            <stop stop-color="#6B46C1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" fill="url(#contactGradient)">
+        <!-- Email Envelope -->
+        <rect x="100" y="80" width="200" height="140" rx="10" opacity="0.6"></rect>
+        <path d="M100,80 L200,170 L300,80" stroke="url(#contactGradient)" stroke-width="4" fill="none" opacity="0.8"></path>
+        <path d="M100,220 L170,150" stroke="url(#contactGradient)" stroke-width="4" fill="none" opacity="0.8"></path>
+        <path d="M300,220 L230,150" stroke="url(#contactGradient)" stroke-width="4" fill="none" opacity="0.8"></path>
+        
+        <!-- Social Media Icons (Simplified) -->
+        <circle cx="80" cy="50" r="15" opacity="0.4"></circle>
+        <circle cx="130" cy="50" r="15" opacity="0.4"></circle>
+        <circle cx="180" cy="50" r="15" opacity="0.4"></circle>
+        
+        <!-- Phone -->
+        <rect x="320" y="40" width="40" height="70" rx="5" opacity="0.5"></rect>
+        <rect x="325" y="50" width="30" height="40" opacity="0.3"></rect>
+        <circle cx="340" cy="100" r="5" opacity="0.5"></circle>
+    </g>
+</svg>
