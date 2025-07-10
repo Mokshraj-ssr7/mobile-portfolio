@@ -28,14 +28,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, 
-        var(--deeper-purple) 0%, 
-        var(--dark-purple) 40%,
-        var(--rich-purple) 60%,
-        var(--deeper-purple) 100%);
-    background-attachment: fixed;
-    background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
+    background: var(--deeper-purple);
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -453,18 +446,17 @@ header {
 .tech-bubble {
     padding: 10px 20px;
     background: rgba(18, 18, 18, 0.7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(159, 122, 234, 0.4);
-    box-shadow: 0 2px 10px rgba(159, 122, 234, 0.15);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 8px rgba(159, 122, 234, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 .tech-bubble:hover {
     background: rgba(159, 122, 234, 0.2);
     border-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(159, 122, 234, 0.4);
-    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(159, 122, 234, 0.3);
+    transform: translateY(-3px);
 }
 
 /* Work Section */
@@ -839,8 +831,10 @@ header {
 
 .glass-card:hover, .glass-card:focus-within {
     background-color: var(--glass-highlight);
-    box-shadow: 0 8px 32px rgba(159, 122, 234, 0.2);
-    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(159, 122, 234, 0.2);
+    transform: translateY(-3px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    will-change: transform, box-shadow;
 }
 
 .glass-card::after {
@@ -966,6 +960,101 @@ header {
     background-color: rgba(159, 122, 234, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(159, 122, 234, 0.2);
+}
+
+/* Simple Background Effects */
+.simple-background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.simple-gradient {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+    background: radial-gradient(circle, 
+        rgba(183, 148, 244, 0.6) 0%, 
+        rgba(159, 122, 234, 0.4) 30%, 
+        rgba(107, 70, 193, 0.2) 60%, 
+        transparent 80%);
+    pointer-events: none;
+    will-change: transform; /* Performance optimization */
+    transform: translate3d(0, 0, 0); /* Force GPU acceleration */
+}
+
+.simple-gradient-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vh;
+    height: 50vh;
+}
+
+.simple-gradient-2 {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vh;
+    height: 70vh;
+    opacity: 0.25;
+}
+
+.simple-gradient-3 {
+    bottom: -10%;
+    right: -5%;
+    width: 60vh;
+    height: 60vh;
+    opacity: 0.15;
+}
+
+/* Button click animation */
+.button-clicked {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(159, 122, 234, 0.8) !important;
+    transition: all 0.2s ease;
+}
+
+/* Improve performance for scrolling */
+body {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+/* Smooth transitions for section changes */
+[data-active-section="home"] .simple-gradient-1 {
+    opacity: 0.25;
+}
+
+[data-active-section="about"] .simple-gradient-2 {
+    opacity: 0.3;
+}
+
+[data-active-section="work"] .simple-gradient-3 {
+    opacity: 0.25;
+}
+
+[data-active-section="contact"] .simple-gradient-2 {
+    opacity: 0.35;
+}
+
+/* Remove gradient lights styles that were used with Three.js */
+.gradient-lights,
+.light-cluster,
+.cluster-light,
+.gradient-light {
+    display: none;
+}
+
+#canvas-container {
+    display: none;
 }
 
 /* Responsive adjustments */
@@ -1241,19 +1330,19 @@ header {
 
 @keyframes moveGradient {
     0% {
-        transform: translate(0%, 0%) scale(1);
+        transform: translate3d(0%, 0%, 0) scale(1);
     }
     25% {
-        transform: translate(10%, -10%) scale(1.1);
+        transform: translate3d(5%, -5%, 0) scale(1.05);
     }
     50% {
-        transform: translate(-5%, 15%) scale(0.9);
+        transform: translate3d(-3%, 8%, 0) scale(0.95);
     }
     75% {
-        transform: translate(-15%, -5%) scale(1.2);
+        transform: translate3d(-8%, -3%, 0) scale(1.1);
     }
     100% {
-        transform: translate(5%, 5%) scale(1);
+        transform: translate3d(3%, 3%, 0) scale(1);
     }
 }
 
@@ -1380,10 +1469,11 @@ header {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.6s ease;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(159, 122, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(159, 122, 234, 0.2);
+    will-change: transform;
 }
 
 .work-item:hover .work-item-inner {
@@ -1557,5 +1647,261 @@ header {
     
     .work-item-back p {
         font-size: 0.8rem;
+    }
+}
+
+/* Vector Graphics Styles */
+.vector-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.vector-element {
+    position: absolute;
+    opacity: 0.15;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave-bg {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: url('assets/wave-bg.svg') no-repeat bottom center;
+    background-size: 100% auto;
+    z-index: -1;
+}
+
+.grid-pattern {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/grid-pattern.svg') repeat;
+    background-size: 50% auto;
+    opacity: 0.05;
+    animation: slowDrift 60s linear infinite;
+    z-index: -2;
+}
+
+.dots-pattern {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/dots-pattern.svg') no-repeat top right;
+    background-size: 80% auto;
+    opacity: 0.1;
+    z-index: -3;
+}
+
+/* Section-specific vector graphics */
+.home-vector-graphics {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.section-vector-graphics {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-svg {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.7;
+}
+
+.code-brackets {
+    top: 20%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    animation: float 8s ease-in-out infinite;
+}
+
+.blob-shape {
+    bottom: 15%;
+    right: 15%;
+    width: 250px;
+    height: 250px;
+    animation: float 10s ease-in-out 1s infinite;
+    opacity: 0.4;
+    z-index: -2;
+}
+
+.tech-circuit {
+    bottom: 10%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    animation: floatAndRotate 15s linear infinite;
+    opacity: 0.5;
+}
+
+.tech-icons {
+    bottom: 5%;
+    left: 5%;
+    width: 300px;
+    height: 300px;
+    animation: float 12s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+.contact-illustration {
+    top: 15%;
+    right: 5%;
+    width: 280px;
+    height: 210px;
+    animation: float 9s ease-in-out 0.5s infinite;
+    opacity: 0.4;
+}
+
+/* Animation for subtle movement of vector graphics */
+@keyframes slowDrift {
+    0% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(-5%, -5%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes floatAndRotate {
+    0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    25% { transform: translate3d(-10px, -15px, 0) rotate(5deg); }
+    50% { transform: translate3d(10px, 10px, 0) rotate(10deg); }
+    75% { transform: translate3d(-5px, -5px, 0) rotate(5deg); }
+    100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+/* New vector graphics styles */
+.programming-languages {
+    top: 10%;
+    left: 5%;
+    width: 200px;
+    height: 150px;
+    animation: float 7s ease-in-out 0.2s infinite;
+    opacity: 0.6;
+}
+
+.tech-network {
+    bottom: 10%;
+    left: 10%;
+    width: 300px;
+    height: 200px;
+    animation: float 12s ease-in-out 0.5s infinite;
+    opacity: 0.4;
+    z-index: -2;
+}
+
+.responsive-design {
+    top: 20%;
+    right: 10%;
+    width: 200px;
+    height: 120px;
+    animation: float 9s ease-in-out 1s infinite;
+    opacity: 0.5;
+}
+
+.dev-workflow {
+    bottom: 15%;
+    right: 5%;
+    width: 250px;
+    height: 150px;
+    animation: floatAndRotate 16s linear infinite;
+    opacity: 0.4;
+}
+
+.hexagon-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.creative-coder {
+    top: 15%;
+    left: 15%;
+    width: 150px;
+    height: 150px;
+    animation: float 10s ease-in-out 0.7s infinite;
+    opacity: 0.6;
+}
+
+/* Mobile responsiveness for vector graphics */
+@media (max-width: 768px) {
+    .code-brackets, .blob-shape {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .tech-circuit, .programming-languages, .creative-coder {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .tech-network, .responsive-design, .dev-workflow {
+        width: 180px;
+        height: 120px;
+    }
+    
+    .grid-pattern {
+        background-size: 100% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .code-brackets, .blob-shape, .tech-circuit {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .vector-element {
+        opacity: 0.08;
+    }
+}
+
+/* Add subtle animation for section transitions */
+.section:hover .floating-svg {
+    animation-play-state: running;
+}
+
+/* Ensure vector graphics don't interfere with content */
+@media (max-width: 992px) {
+    .floating-svg {
+        opacity: 0.2;
+    }
+}
+
+/* Improve performance with reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .floating-svg {
+        animation: none;
+    }
+    
+    .vector-element {
+        animation: none;
     }
 }
