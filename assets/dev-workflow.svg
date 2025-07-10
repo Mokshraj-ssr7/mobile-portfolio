@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .workflow-box { fill: #170D29; stroke: #9F7AEA; stroke-width: 2; rx: 8; }
+    .workflow-arrow { fill: none; stroke: #9F7AEA; stroke-width: 2.5; marker-end: url(#arrow); }
+    .workflow-icon { fill: none; stroke: #9F7AEA; stroke-width: 2; }
+    .workflow-text { font-family: 'Poppins', sans-serif; font-size: 14px; fill: #9F7AEA; text-anchor: middle; }
+  </style>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9F7AEA" />
+    </marker>
+  </defs>
+  
+  <!-- Workflow Boxes -->
+  <rect class="workflow-box" x="50" y="100" width="100" height="60" />
+  <rect class="workflow-box" x="250" y="100" width="100" height="60" />
+  <rect class="workflow-box" x="450" y="100" width="100" height="60" />
+  <rect class="workflow-box" x="350" y="200" width="100" height="60" />
+  <rect class="workflow-box" x="150" y="200" width="100" height="60" />
+  
+  <!-- Workflow Arrows -->
+  <path class="workflow-arrow" d="M150,130 L250,130" />
+  <path class="workflow-arrow" d="M350,130 L450,130" />
+  <path class="workflow-arrow" d="M500,160 C500,200 500,230 450,230" />
+  <path class="workflow-arrow" d="M350,230 L250,230" />
+  <path class="workflow-arrow" d="M150,230 C100,230 100,200 100,160" />
+  
+  <!-- Workflow Icons -->
+  <!-- Plan -->
+  <g transform="translate(100, 130)">
+    <circle class="workflow-icon" cx="0" cy="-10" r="10" />
+    <path class="workflow-icon" d="M-8,0 L-3,5 L8,-5" />
+    <text class="workflow-text" x="0" y="25">Plan</text>
+  </g>
+  
+  <!-- Code -->
+  <g transform="translate(300, 130)">
+    <path class="workflow-icon" d="M-10,-10 L-5,-10 M-10,0 L0,0 M-10,10 L-2,10" />
+    <path class="workflow-icon" d="M5,-10 L15,0 L5,10" />
+    <text class="workflow-text" x="0" y="25">Code</text>
+  </g>
+  
+  <!-- Test -->
+  <g transform="translate(500, 130)">
+    <path class="workflow-icon" d="M-10,-5 L0,5 L10,-5" />
+    <circle class="workflow-icon" cx="0" cy="-5" r="10" />
+    <text class="workflow-text" x="0" y="25">Test</text>
+  </g>
+  
+  <!-- Deploy -->
+  <g transform="translate(400, 230)">
+    <path class="workflow-icon" d="M-10,-10 L0,-15 L10,-10 L10,10 L-10,10 Z" />
+    <path class="workflow-icon" d="M0,-15 L0,5" />
+    <text class="workflow-text" x="0" y="25">Deploy</text>
+  </g>
+  
+  <!-- Feedback -->
+  <g transform="translate(200, 230)">
+    <path class="workflow-icon" d="M-10,-10 Q-15,0 -10,10 Q0,15 10,10 Q15,0 10,-10 Q0,-15 -10,-10" />
+    <circle class="workflow-icon" cx="0" cy="0" r="3" />
+    <text class="workflow-text" x="0" y="25">Feedback</text>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <circle cx="300" cy="30" r="15" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.4" />
+  <circle cx="300" cy="30" r="8" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.7" />
+  
+  <circle cx="50" cy="250" r="20" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.4" />
+  <circle cx="50" cy="250" r="12" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.7" />
+  
+  <circle cx="550" cy="50" r="18" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.4" />
+  <circle cx="550" cy="50" r="10" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.7" />
+</svg>

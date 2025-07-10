@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .device { fill: none; stroke: #9F7AEA; stroke-width: 2; }
+    .screen { fill: #170D29; stroke: #9F7AEA; stroke-width: 1; }
+    .ui-element { fill: #6B46C1; opacity: 0.7; }
+    .responsive-line { stroke: #9F7AEA; stroke-width: 1; stroke-dasharray: 4,4; }
+  </style>
+  
+  <!-- Desktop -->
+  <g transform="translate(50, 50)">
+    <rect class="device" x="0" y="0" width="240" height="150" rx="5" />
+    <rect class="screen" x="10" y="10" width="220" height="120" rx="2" />
+    <rect class="ui-element" x="20" y="20" width="40" height="10" rx="2" />
+    <rect class="ui-element" x="20" y="40" width="180" height="5" rx="1" />
+    <rect class="ui-element" x="20" y="55" width="160" height="5" rx="1" />
+    <rect class="ui-element" x="20" y="70" width="180" height="5" rx="1" />
+    <rect class="ui-element" x="20" y="100" width="60" height="20" rx="5" />
+    <rect x="110" y="150" width="20" height="10" fill="#9F7AEA" rx="2" />
+  </g>
+  
+  <!-- Tablet -->
+  <g transform="translate(320, 70)">
+    <rect class="device" x="0" y="0" width="120" height="160" rx="8" />
+    <rect class="screen" x="10" y="10" width="100" height="140" rx="3" />
+    <rect class="ui-element" x="20" y="20" width="30" height="8" rx="2" />
+    <rect class="ui-element" x="20" y="38" width="80" height="4" rx="1" />
+    <rect class="ui-element" x="20" y="48" width="70" height="4" rx="1" />
+    <rect class="ui-element" x="20" y="58" width="80" height="4" rx="1" />
+    <rect class="ui-element" x="20" y="90" width="40" height="15" rx="4" />
+    <circle cx="60" cy="150" r="5" fill="#9F7AEA" />
+  </g>
+  
+  <!-- Mobile -->
+  <g transform="translate(210, 150)">
+    <rect class="device" x="0" y="0" width="70" height="130" rx="10" />
+    <rect class="screen" x="5" y="10" width="60" height="110" rx="5" />
+    <rect class="ui-element" x="15" y="20" width="20" height="6" rx="2" />
+    <rect class="ui-element" x="15" y="32" width="40" height="3" rx="1" />
+    <rect class="ui-element" x="15" y="39" width="35" height="3" rx="1" />
+    <rect class="ui-element" x="15" y="46" width="40" height="3" rx="1" />
+    <rect class="ui-element" x="15" y="65" width="25" height="10" rx="3" />
+    <rect x="25" y="125" width="20" height="3" fill="#9F7AEA" rx="1" />
+  </g>
+  
+  <!-- Connecting Lines -->
+  <line class="responsive-line" x1="170" y1="100" x2="210" y2="180" />
+  <line class="responsive-line" x1="320" y1="120" x2="280" y2="180" />
+  
+  <!-- Responsive Symbols -->
+  <g transform="translate(170, 230)">
+    <text x="0" y="0" font-family="monospace" font-size="14" fill="#9F7AEA">@media</text>
+    <text x="80" y="0" font-family="monospace" font-size="12" fill="#9F7AEA">{...}</text>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <circle cx="250" cy="40" r="15" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.6" />
+  <circle cx="250" cy="40" r="8" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.9" />
+  <circle cx="450" cy="250" r="20" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.6" />
+  <circle cx="450" cy="250" r="12" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.9" />
+  <circle cx="80" cy="260" r="18" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.6" />
+  <circle cx="80" cy="260" r="10" fill="none" stroke="#9F7AEA" stroke-width="1" opacity="0.9" />
+</svg>
