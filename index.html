@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokshraj - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader">
+            <span class="loading-text">LOADING</span>
+            <span class="loading-percentage">0%</span>
+        </div>
+    </div>
+
+    <!-- Moving purple gradient lights -->
+    <div class="gradient-lights">
+        <!-- Background ambient lights - positioned for optimal gradient coverage -->
+        <div class="gradient-light light-top-left"></div>
+        <div class="gradient-light light-top-right"></div>
+        <div class="gradient-light light-center"></div>
+        <div class="gradient-light light-bottom-left"></div>
+        <div class="gradient-light light-bottom-right"></div>
+        <div class="gradient-light light-middle-left"></div>
+        <div class="gradient-light light-middle-right"></div>
+        
+        <!-- Left side clusters (red marked region) -->
+        <div class="light-cluster left-cluster">
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light small"></div>
+            <div class="cluster-light small"></div>
+            <div class="cluster-light small"></div>
+        </div>
+        
+        <!-- Right side clusters (red marked region) -->
+        <div class="light-cluster right-cluster">
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light small"></div>
+            <div class="cluster-light small"></div>
+            <div class="cluster-light small"></div>
+        </div>
+        
+        <!-- Center clusters (for contact section) -->
+        <div class="light-cluster center-cluster">
+            <div class="cluster-light"></div>
+            <div class="cluster-light"></div>
+            <div class="cluster-light small"></div>
+            <div class="cluster-light small"></div>
+            <div class="cluster-light small"></div>
+        </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <header>
+        <div class="logo">NAMASTE 🙏</div>
+        <div class="email">mokshtech6@gmail.com</div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#work">WORK</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="welcome-text">
+            <p class="intro">Hello! I'm</p>
+            <h1>MOKSHRAJSINH<br>VIKRAMSINH<br>BODANA</h1>
+            <div class="title-container">
+                <p class="subtitle">A Creative</p>
+                <h2 class="highlight">DEVELOPER</h2>
+            </div>
+        </div>
+        <div class="social-sidebar">
+            <a href="https://github.com/mokshraj" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/mokshraj" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/mokshraj" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/mokshraj" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="https://drive.google.com/file/d/1NyKK5XAlbxzQ0UFt5z2NGPTwyQrIVkee/preview" target="_blank" class="resume-btn">RESUME <i class="fas fa-file-alt"></i></a>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-content">
+            <div class="glass-card about-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Who I Am</h3>
+                        <div class="card-icon"><i class="fas fa-user"></i></div>
+                    </div>
+                    <div class="about-text">
+                        <p>I am Computer Engineer. I Like Electrical Machines And i Love to Play CALL OF DUTY. I Also Develop Project In Tech Whether i Don't Know About Them, but i Learn To Develop Them And Get Idea About Them. I can also do hacking for my ex-hobby.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="techstack" class="section">
+        <h2 class="section-title">MY TECHSTACK</h2>
+        <div class="tech-bubbles-container">
+            <div class="tech-bubble">React</div>
+            <div class="tech-bubble">Next.js</div>
+            <div class="tech-bubble">JavaScript</div>
+            <div class="tech-bubble">Three.js</div>
+            <div class="tech-bubble">CSS</div>
+            <div class="tech-bubble">Node.js</div>
+            <div class="tech-bubble">Express.js</div>
+            <div class="tech-bubble">MongoDB</div>
+            <div class="tech-bubble">AI/ML</div>
+            <div class="tech-bubble">Angular</div>
+            <div class="tech-bubble">TensorFlow</div>
+        </div>
+    </section>
+
+    <section id="work" class="section">
+        <h2 class="section-title">WHAT I DO</h2>
+        <div class="work-categories">
+            <div class="glass-card service-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>DEVELOP</h3>
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                    </div>
+                    <p>Develop projects</p>
+                    <p>I have limet skills of tech like mern and mean stack and may skills below.</p>
+                    <div class="skills-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">AI/ML</span>
+                        <span class="skill-tag">Three.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card service-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>CREATION</h3>
+                        <div class="card-icon"><i class="fas fa-video"></i></div>
+                    </div>
+                    <p>Content creation</p>
+                    <p>Like creating videoes and youtube,instagram management etc;</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3 class="subsection-title">MY WORK</h3>
+        <div class="glass-card gallery-card">
+            <div class="card-content">
+                <div class="work-gallery-container">
+                    <div class="work-gallery">
+                        <!-- Existing work items -->
+                        <div class="work-item">
+                            <div class="work-item-inner glass-effect">
+                                <div class="work-item-front">
+                                    <div class="work-item-image" style="background-color: #6B46C1;">
+                                        <div class="work-item-placeholder">Project 1</div>
+                                    </div>
+                                </div>
+                                <div class="work-item-back">
+                                    <h4>Portfolio Website</h4>
+                                    <p>A responsive portfolio website with Three.js and modern UI effects</p>
+                                    <div class="work-item-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JS</span>
+                                        <span>Three.js</span>
+                                    </div>
+                                    <a href="#" class="work-item-link">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                <div class="work-item">
+                    <div class="work-item-inner">
+                        <div class="work-item-front">
+                            <div class="work-item-image" style="background-color: #805AD5;">
+                                <div class="work-item-placeholder">Project 2</div>
+                            </div>
+                        </div>
+                        <div class="work-item-back">
+                            <h4>E-commerce App</h4>
+                            <p>A full-stack e-commerce application with payment integration</p>
+                            <div class="work-item-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <a href="#" class="work-item-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-item">
+                    <div class="work-item-inner">
+                        <div class="work-item-front">
+                            <div class="work-item-image" style="background-color: #9F7AEA;">
+                                <div class="work-item-placeholder">Project 3</div>
+                            </div>
+                        </div>
+                        <div class="work-item-back">
+                            <h4>AI Assistant</h4>
+                            <p>An AI-powered virtual assistant with natural language processing</p>
+                            <div class="work-item-tags">
+                                <span>Python</span>
+                                <span>TensorFlow</span>
+                                <span>NLP</span>
+                            </div>
+                            <a href="#" class="work-item-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future work items -->
+                <div class="work-item add-more">
+                    <div class="work-item-inner">
+                        <div class="add-more-content">
+                            <div class="plus-icon">+</div>
+                            <p>More projects coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation arrows for gallery -->
+            <div class="gallery-nav">
+                <button class="gallery-arrow gallery-prev" aria-label="Previous projects">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-arrow gallery-next" aria-label="Next projects">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <h2 class="section-title">My studies & Work</h2>
+        <div class="glass-card education-card">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Education Journey</h3>
+                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item glass-effect">
+                        <div class="timeline-content">
+                            <h3>Position 10 th</h3>
+                            <h4>J.B Modi</h4>
+                            <span class="timeline-year">2020</span>
+                            <p>THAT IS MY SCHOOL OF 10TH AND I HAD 76% IN GSEB BOARD, THAT WAS FUNNNNN!</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass-effect">
+                        <div class="timeline-content">
+                            <h3>Position 12TH</h3>
+                            <h4>ADVAIT VIDYANIKATEN</h4>
+                            <span class="timeline-year">2022</span>
+                            <p>I HAVE DONE MY 12TH SCIENCE FROM THERE WITH PHYSICS,MATHS AND CHEMISTRY. AND I HAVE 66%, THAT WAS NOT MROE FUN AND CREATIVITY.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item glass-effect">
+                        <div class="timeline-content">
+                            <h3>Position COLLEGE B.TECH</h3>
+                            <h4>A.D. PATEL INSTITUTE</h4>
+                            <span class="timeline-year">NOW</span>
+                            <p>CURRENTLY IN 6TH SEM WITH OVERALL CGPA 9.5 IT'S FUN BECAUSE I AM MAKING MY FAVOURITE PROJECTS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="section">
+        <h2 class="section-title">My Work</h2>
+        <div class="glass-card">
+            <div class="card-content">
+                <div class="card-header">
+                    <h3>Projects</h3>
+                    <div class="card-icon"><i class="fas fa-code-branch"></i></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card glass-effect">
+                        <div class="project-number">01</div>
+                        <div class="project-info">
+                            <h3>Sign-Language-To-Text-and-Speech-Conversion-master</h3>
+                            <p class="project-tech">AI/ML</p>
+                            <div class="project-details">
+                                <h4>Tools and features</h4>
+                                <p>Python and it's libraries:open-cv,keras,panda,tensorflow</p>
+                            </div>
+                        </div>
+                        <div class="project-img">
+                            <img src="https://via.placeholder.com/300x200" alt="Sign Language Project">
+                        </div>
+                    </div>
+                    <div class="project-card glass-effect">
+                        <div class="project-number">02</div>
+                        <div class="project-info">
+                            <h3>Modern chat system like whatsapp</h3>
+                            <p class="project-tech">vite+react+ts</p>
+                            <div class="project-details">
+                                <h4>Tools and features</h4>
+                                <p>used tec:vite+react+ts+json</p>
+                            </div>
+                        </div>
+                        <div class="project-img">
+                            <img src="https://via.placeholder.com/300x200" alt="Chat System Project">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="contact-container">
+            <div class="glass-card contact-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3>Get In Touch</h3>
+                        <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-group">
+                            <h3>Email</h3>
+                            <p>primiumbucket@gmail.com</p>
+                        </div>
+                        <div class="contact-group">
+                            <h3>Phone</h3>
+                            <p>+91 9586640812</p>
+                        </div>
+                        <div class="contact-group">
+                            <h3>Social</h3>
+                            <div class="social-links">
+                                <a href="#" class="social-link glass-effect">Github <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="#" class="social-link glass-effect">Linkedin <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="#" class="social-link glass-effect">Twitter <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="#" class="social-link glass-effect">Instagram <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="contact-credits">
+                            <p>Model Designed by others and Developed by <a href="#">mokshraj</a></p>
+                            <p>© 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://drive.google.com/file/d/1NyKK5XAlbxzQ0UFt5z2NGPTwyQrIVkee/preview" target="_blank" class="resume-floating-btn">RESUME <i class="fas fa-file-alt"></i></a>
+
+    <script src="script.js"></script>
+</body>
+</html>
