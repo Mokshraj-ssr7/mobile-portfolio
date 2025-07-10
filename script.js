@@ -390,4 +390,3 @@ function initVectorGraphicsEffects() {
         });
     });
 }
-
